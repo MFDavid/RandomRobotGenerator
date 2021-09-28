@@ -1,0 +1,52 @@
+<html>
+
+<head>
+
+    <title>Avatar Maker</title>
+
+    <script>
+// 3 is amount of head images and +1 is to prevent it from starting at 0
+        window.onload =function ()
+            {
+             var robothead = new Image();
+             var robotheadnum=Math.floor(Math.random()*3)+1;
+             var robotheadname="head" + robotheadnum + ".png";
+             robothead.src=robotheadname;
+            
+             robothead.onload=function()
+             {
+                 buildrobot();  //use and finish this later
+             }
+             
+             function buildrobot() //adds each part of the robot to the canvas
+             {
+                 var canvas=document.getElementById('canvas');
+                 var ctx = canvas.getContext('2d');
+                 canvas.width=400;  //sets the max canvas width to 400px
+                 canvas.height=400; 
+
+                 ctx.drawImage(robothead,((400-robothead.width)/2),50);
+                
+             }
+
+            }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div align="center">
+<canvas id="canvas" style="border:5px solid #000000;"></canvas>
+<br><br>
+<button onClick="window.location.reload();">Mint!</button>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
