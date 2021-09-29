@@ -1,0 +1,131 @@
+<html>
+
+<head>
+
+    <title>Avatar Maker</title>
+
+    <script>
+    // Need to do: get or make images code, function is finished
+// 3 is amount of head images and +1 is to prevent it from starting at 0
+        window.onload =function ()
+            {
+             //Neck
+             var robothead = new Image();
+             var robotheadnum=Math.floor(Math.random()*3)+1;
+             var robotheadname="head" + robotheadnum + ".png";
+             robothead.src=robotheadname;
+             //HEAD
+             var robothead = new Image();
+             var robotheadnum=Math.floor(Math.random()*3)+1;
+             var robotheadname="head" + robotheadnum + ".png";
+             robothead.src=robotheadname;
+             //EYES
+             var roboteyes = new Image();
+             var roboteyesnum=Math.floor(Math.random()*3)+1;
+             var roboteyesname="eyes" + roboteyesnum + ".png";
+             roboteyes.src=roboteyesname;
+             //Mouth
+             var robothead = new Image();
+             var robotheadnum=Math.floor(Math.random()*3)+1;
+             var robotheadname="head" + robotheadnum + ".png";
+             robothead.src=robotheadname;
+             //Nose
+             var robothead = new Image();
+             var robotheadnum=Math.floor(Math.random()*3)+1;
+             var robotheadname="head" + robotheadnum + ".png";
+             robothead.src=robotheadname;
+             //Ears
+             var robothead = new Image();
+             var robotheadnum=Math.floor(Math.random()*3)+1;
+             var robotheadname="head" + robotheadnum + ".png";
+             robothead.src=robotheadname;
+             //Antenna
+             var robothead = new Image();
+             var robotheadnum=Math.floor(Math.random()*3)+1;
+             var robotheadname="head" + robotheadnum + ".png";
+             robothead.src=robotheadname;
+            
+              // After body part is loaded, call the function below that displays parts
+
+             // Head loaded
+             robothead.onload=function()
+             {
+                 buildrobot();  //use and finish this later
+             }
+             // Eyes loaded
+             roboteyes.onload=function()
+             {
+                 buildrobot();  //use and finish this later
+             }
+             // Head loaded
+             robothead.onload=function()
+             {
+                 buildrobot();  //use and finish this later
+             }
+             // Head loaded
+             robothead.onload=function()
+             {
+                 buildrobot();  //use and finish this later
+             }
+             // Head loaded
+             robothead.onload=function()
+             {
+                 buildrobot();  //use and finish this later
+             }
+             
+             function buildrobot() //adds each part of the robot to the canvas
+             {
+                 var canvas=document.getElementById('canvas');
+                 var ctx = canvas.getContext('2d');
+                 canvas.width=400;  //sets the max canvas width to 400px
+                 canvas.height=400; 
+
+                 // ADD RANDOM Background Color
+                 var r=Math.floor(Math.random() * (255 -100 +1) + 100); //red
+                 var g=Math.floor(Math.random() * (255 -100 +1) + 100);  //green
+                 var b=Math.floor(Math.random() * (255 -100 +1) + 100); //blue
+                    //convert to hex string
+                 var bgcol = "#" + r.toString(16) + g.toString(16) + b.toString(16); 
+                 ctx.fillStyle = bgcol; //sets the color to the hex string
+                 ctx.fillRect(0, 0, 400, 400);
+
+                    // Order parts will be drawn in
+
+                 //Draw neck order matters
+                 ctx.drawImage(robothead,((400-robothead.width)/2),50);
+                 //Draw ears order matters
+                 ctx.drawImage(robothead,((400-robothead.width)/2),50);
+                 //Draw antenna "50" needs to be changed
+                 ctx.drawImage(roboteyes,((400-roboteyes.width)/2),100); 
+                 //Draw Head "50" needs to be changed
+                 ctx.drawImage(roboteyes,((400-roboteyes.width)/2),100);
+                 //Draw Ears "50" needs to be changed
+                 ctx.drawImage(roboteyes,((400-roboteyes.width)/2),100);
+                 //Draw Mouth "50" needs to be changed
+                 ctx.drawImage(roboteyes,((400-roboteyes.width)/2),100);
+                 //Draw Nose "50" needs to be changed
+                 ctx.drawImage(roboteyes,((400-roboteyes.width)/2),100);
+                
+             }
+
+            }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div align="center">
+    <canvas id="canvas" style="border:5px solid #000000;"></canvas>
+    <br><br>
+    <button onClick="window.location.reload();">Mint!</button>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
